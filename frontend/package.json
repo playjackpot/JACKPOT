@@ -1,0 +1,16 @@
+{
+  "name": "jackpot-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@solana/web3.js": "^1.95.3",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-maps": "^1.7.1"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios"
+  }
+}
