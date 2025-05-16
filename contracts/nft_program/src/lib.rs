@@ -8,7 +8,7 @@ use instructions::*;
 use state::*;
 use errors::*;
 
-declare_id!("YourNFTProgramIDHere"); // Replace with actual program ID after deployment
+declare_id!("YourNFTProgramIDHere");
 
 #[program]
 pub mod nft_program {
@@ -24,5 +24,9 @@ pub mod nft_program {
 
     pub fn airdrop_nft(ctx: Context<AirdropNFT>, rarity: Rarity) -> Result<()> {
         instructions::airdrop::handler(ctx, rarity)
+    }
+
+    pub fn rarity_halving(ctx: Context<RarityHalving>) -> Result<()> {
+        instructions::rarity_halving::handler(ctx)
     }
 }
