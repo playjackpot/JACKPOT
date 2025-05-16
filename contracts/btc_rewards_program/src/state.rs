@@ -9,4 +9,5 @@ pub struct BTCWalletState {
     pub year: u32,                  // Current game year
     pub annual_hide_created: bool,  // Tracks if annual BTC hide is created for the year
     pub annual_hide: Option<Pubkey>, // Reference to the hide account in jackpot_program
+    pub btc_price_usd: u64, // BTC/USD price from Chainlink (8 decimals)
 }
