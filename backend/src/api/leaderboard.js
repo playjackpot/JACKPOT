@@ -35,3 +35,24 @@ function updateLeaderboard(event) {
 }
 
 module.exports = router;
+
+const express = require('express');
+const { connectDB } = require('./db');
+const geolocationRoutes = require('./api/geolocation');
+const rewardsRoutes = require('./api/rewards');
+const leaderboardRoutes = require('./api/leaderboard');
+
+const app = express();
+app.use(express.json());
+
+// Connect to MongoDB
+connectDB();
+
+app.use('/api/geolocation', geolocationRoutes);
+app.use('/api/rewards', rewardsRoutes);
+app.use('/api/leaderboard', leaderboardRoutes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
