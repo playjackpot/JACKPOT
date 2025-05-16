@@ -10,4 +10,6 @@ pub enum ErrorCode {
     AirdropLimitReached,
     #[msg("Invalid rarity upgrade")]
     InvalidRarityUpgrade,
+    #[msg("Rarity halving not allowed before 2028")]
+    InvalidRarityHalvingTime,
 }
