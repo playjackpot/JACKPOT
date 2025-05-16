@@ -23,4 +23,7 @@ pub enum ErrorCode {
     AnnualHideAlreadyCreated,
     #[msg("KYC not verified")]
     KYCNotVerified,
+    #[msg("Invalid or zero price from Chainlink feed")]
+    InvalidPriceFeed,
+}
 }
