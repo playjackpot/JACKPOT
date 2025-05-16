@@ -49,4 +49,6 @@ pub mod jackpot_program {
     pub fn fetch_price(ctx: Context<FetchPrice>) -> Result<()> {
         instructions::fetch_price::handler(ctx)
     }
+    pub fn community_event(ctx: Context<CommunityEvent>, reward: EventReward) -> Result<()> {
+    instructions::community_events::handler(ctx, reward)
 }
