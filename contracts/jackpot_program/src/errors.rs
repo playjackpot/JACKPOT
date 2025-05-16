@@ -18,4 +18,6 @@ pub enum ErrorCode {
     IneligibleForAirdrop,
     #[msg("Airdrop limit reached")]
     AirdropLimitReached,
+     #[msg("Microtransactions not available before Year 8")]
+    MicrotransactionsNotAvailable,
 }
