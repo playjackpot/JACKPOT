@@ -10,6 +10,7 @@ name = "jackpot_program"
 [dependencies]
 anchor-lang = "0.30.1"
 anchor-spl = "0.30.1"
+jackpot_program = { path = "../jackpot_program" }
 
 [profile.release]
 overflow-checks = true
