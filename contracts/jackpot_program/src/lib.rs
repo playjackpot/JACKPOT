@@ -39,3 +39,6 @@ pub mod jackpot_program {
 }
     }
 }
+pub fn purchase_elite_nft(ctx: Context<PurchaseEliteNFT>) -> Result<()> {
+    instructions::microtransactions::handler(ctx)
+}
