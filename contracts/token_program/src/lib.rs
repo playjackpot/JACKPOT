@@ -64,4 +64,37 @@ pub struct MintInitialSupply<'info> {
     #[account(mut)]
     pub authority: Signer<'info>,
     pub token_program: Program<'info, Token>,
+    
+use anchor_lang::prelude::*;
+use anchor_spl::token::{Mint, Token, TokenAccount, MintTo};
+
+pub mod instructions;
+pub mod state;
+pub mod errors;
+
+use instructions::*;
+use state::*;
+use errors::*;
+
+declare_id!("YourTokenProgramIDHere");
+
+#[program]
+pub mod token_program {
+    use super::*;
+
+    pub fn initialize_token(ctx: Context<InitializeToken>) -> Result<()> {
+        instructions::initialize_token::handler(ctx)
+    }
+
+    pub fn mint_initial_supply(ctx: Context<MintInitialSupply>, amount: u64) -> Result<()> {
+        instructions::mint_initial_supply::handler(ctx, amount)
+    }
+
+    pub fn create_vesting_schedule(ctx: Context<CreateVestingSchedule>, amount: u64, start_ts: i64, duration: i64) -> Result<()> {
+        instructions::governance::create_vesting_schedule(ctx, amount, start_ts, duration)
+    }
+
+    pub fn release_vested_tokens(ctx: Context<ReleaseVestedTokens>) -> Result<()> {
+        instructions::governance::release_vested_tokens(ctx)
+    }
 }
