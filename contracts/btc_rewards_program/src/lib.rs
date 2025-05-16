@@ -29,4 +29,8 @@ pub mod btc_rewards_program {
     pub fn distribute_btc(ctx: Context<DistributeBTC>) -> Result<()> {
         instructions::distribute_btc::handler(ctx)
     }
+
+    pub fn annual_btc_hide(ctx: Context<AnnualBTCHide>, coordinates: (f64, f64)) -> Result<()> {
+        instructions::annual_btc_hide::handler(ctx, coordinates)
+    }
 }
