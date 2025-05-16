@@ -32,5 +32,10 @@ pub mod jackpot_program {
 
     pub fn buyback_seek(ctx: Context<BuybackSeek>) -> Result<()> {
         instructions::buyback::handler(ctx)
+
+}
+    pub fn update_rank(ctx: Context<UpdateRank>) -> Result<()> {
+    instructions::update_rank::handler(ctx)
+}
     }
 }
