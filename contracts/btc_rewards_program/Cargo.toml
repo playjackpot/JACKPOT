@@ -10,3 +10,5 @@ name = "btc_rewards_program"
 [dependencies]
 anchor-lang = "0.30.1"
 anchor-spl = "0.30.1"
+jackpot_program = { path = "../jackpot_program" }
+chainlink-solana = "0.1.0"
