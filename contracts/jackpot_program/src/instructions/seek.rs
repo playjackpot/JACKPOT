@@ -414,3 +414,12 @@ pub struct BTCFoundEvent {
     pub hide: Pubkey,
     pub amount: u64,
 }
+fn update_rank(player: &mut Player, game_state: &mut GameState) -> Result<()> {
+    update_rank::handler(Context {
+        accounts: UpdateRank {
+            game_state: game_state.to_account_info(),
+            player: player.to_account_info(),
+        },
+        remaining_accounts: vec![],
+    })
+}
