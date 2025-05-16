@@ -22,4 +22,8 @@ pub enum ErrorCode {
     MicrotransactionsNotAvailable,
     #[msg("Invalid or zero price from Chainlink feed")]
     InvalidPriceFeed,
+    #[error_code]
+    #[msg("Player ineligible for community event")]
+    IneligibleForEvent,
 }
+
